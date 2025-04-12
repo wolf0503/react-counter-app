@@ -1,11 +1,13 @@
 // src/components/CounterDisplay/index.tsx
-import React from 'react';
+import * as React from 'react';
 
 interface CounterDisplayProps {
   value: number;
 }
 
-export const CounterDisplay: React.FC<CounterDisplayProps> = ({ value }) => (
+export const CounterDisplay: React.FC<CounterDisplayProps> = ({ 
+  value 
+}: CounterDisplayProps) => (
   <h1 style={{
     fontSize: '4rem',
     color: '#1a365d',

@@ -1,5 +1,5 @@
 // src/components/CounterControls/index.tsx
-import React from 'react';
+import * as React from 'react';
 import { CounterButton } from '../CounterButton';
 import { ButtonConfig } from '../../constants/config';
 
@@ -13,9 +13,9 @@ export const CounterControls: React.FC<CounterControlsProps> = ({
   buttons, 
   disabledButtons, 
   onButtonClick 
-}) => (
+}: CounterControlsProps) => (
   <div style={{ display: 'flex', gap: '1rem' }}>
-    {buttons.map(({ value, disableDuration }) => (
+    {buttons.map(({ value, disableDuration }: ButtonConfig) => (
       <CounterButton
         key={value}
         value={value}

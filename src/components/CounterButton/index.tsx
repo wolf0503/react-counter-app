@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 interface CounterButtonProps {
   value: number;
@@ -10,7 +10,7 @@ export const CounterButton: React.FC<CounterButtonProps> = ({
   value, 
   disabled, 
   onClick 
-}) => (
+}: CounterButtonProps) => (
   <button
     onClick={onClick}
     disabled={disabled}

@@ -6,8 +6,8 @@ interface UseAutoDecrementParams {
 }
 
 export const useAutoDecrement = ({ setCounter }: UseAutoDecrementParams) => {
-  const decrementIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const inactivityTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const decrementIntervalRef = useRef<number | null>(null);
+  const inactivityTimeoutRef = useRef<number | null>(null);
   const lastActionRef = useRef(Date.now());
 
   const clearAllTimers = () => {

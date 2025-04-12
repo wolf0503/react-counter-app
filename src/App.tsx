@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { useAutoDecrement } from './hooks/useAutoDecrement';
 import { CounterDisplay } from './components/CounterDisplay';
 import { CounterControls } from './components/CounterControls';
@@ -6,8 +7,8 @@ import { BUTTON_CONFIG } from './constants/config';
 
 const App: React.FC = () => {
   const [counter, setCounter] = useState(0);
-  const [disabledButtons, setDisabledButtons] = useState(() =>
-    BUTTON_CONFIG.reduce((acc, { value }) => ({ ...acc, [value]: false }), {})
+  const [disabledButtons, setDisabledButtons] = useState<Record<number, boolean>>(() =>
+    BUTTON_CONFIG.reduce((acc, { value }) => ({ ...acc, [value]: false }), {}) as Record<number, boolean>
   );
 
   const { scheduleDecrement, clearAllTimers, updateLastAction } = useAutoDecrement({
